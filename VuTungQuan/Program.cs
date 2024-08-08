@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using VuTungQuan.Data;
+
 namespace VuTungQuan
 {
     public class Program
@@ -8,6 +11,12 @@ namespace VuTungQuan
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            // Read connection string from appsettings.json
+            var connectionString = builder.Configuration.GetConnectionString("Db");
+
+            builder.Services.AddDbContext<PitchOrderDbContext>(options =>
+                options.UseSqlServer(connectionString));
 
             var app = builder.Build();
 

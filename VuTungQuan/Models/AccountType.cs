@@ -2,20 +2,17 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-public class AccountsType
+public class AccountType
 {
     [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
 
     [Required]
-    [MaxLength(255)]
+    [StringLength(255)]
     public string Name { get; set; }
 
     [Required]
-    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    public DateTime Created_at { get; set; }
+    public DateTime CreatedAt { get; set; } = DateTime.Now;
 
-    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    public DateTime? Update_at { get; set; }
+    public DateTime? UpdatedAt { get; set; } = DateTime.Now;
 }
