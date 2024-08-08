@@ -80,6 +80,18 @@ namespace VuTungQuan.Data
                 .HasMany(a => a.Orders)
                 .WithOne(o => o.account)
                 .HasForeignKey(o => o.Id);
+            modelBuilder.Entity<AccountType>()
+                .HasMany(a => a.Accounts)
+                .WithOne(o => o.accounttype)
+                .HasForeignKey(o => o.Id);
+            modelBuilder.Entity<Discount>()
+                .HasMany(d => d.Orders)
+                .WithOne(o => o.discount)
+                .HasForeignKey(o => o.Id);
+            modelBuilder.Entity<Bank>()
+                .HasMany(b => b.Orders)
+                .WithOne(o => o.bank)
+                .HasForeignKey(o => o.Id);
 
             modelBuilder.Entity<PitchType>()
                 .HasMany(pt => pt.FootballPitches)

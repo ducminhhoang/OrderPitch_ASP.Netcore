@@ -27,8 +27,11 @@ namespace VuTungQuan.Models
         [StringLength(255)]
         public string Address { get; set; }
 
-        [Required]
-        public string AccountType { get; set; } = "2";
+        public int AccountTypeId { get; set; }
+
+        [ForeignKey("AccountTypeId")]
+        public AccountType accounttype { get; set; }
+
 
         [Required]
         public DateTime CreatedAt { get; set; } = DateTime.Now;

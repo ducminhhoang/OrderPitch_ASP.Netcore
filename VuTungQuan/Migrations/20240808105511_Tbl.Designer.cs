@@ -12,7 +12,7 @@ using VuTungQuan.Data;
 namespace VuTungQuan.Migrations
 {
     [DbContext(typeof(PitchOrderDbContext))]
-    [Migration("20240808073929_Tbl")]
+    [Migration("20240808105511_Tbl")]
     partial class Tbl
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -88,14 +88,10 @@ namespace VuTungQuan.Migrations
             modelBuilder.Entity("VuTungQuan.Models.Account", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("AccountType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("AccountTypeId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -227,6 +223,10 @@ namespace VuTungQuan.Migrations
                     b.Property<int>("AccountId")
                         .HasColumnType("int");
 
+                    b.Property<string>("BankId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
@@ -234,6 +234,10 @@ namespace VuTungQuan.Migrations
 
                     b.Property<double>("Deposit")
                         .HasColumnType("float");
+
+                    b.Property<string>("DiscountId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -330,6 +334,17 @@ namespace VuTungQuan.Migrations
                     b.ToTable("PitchTypes");
                 });
 
+            modelBuilder.Entity("VuTungQuan.Models.Account", b =>
+                {
+                    b.HasOne("AccountType", "accounttype")
+                        .WithMany("Accounts")
+                        .HasForeignKey("Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("accounttype");
+                });
+
             modelBuilder.Entity("VuTungQuan.Models.FootballPitch", b =>
                 {
                     b.HasOne("VuTungQuan.Models.PitchType", "PitchType")
@@ -349,7 +364,19 @@ namespace VuTungQuan.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Discount", "discount")
+                        .WithMany("Orders")
+                        .HasForeignKey("Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("VuTungQuan.Models.Account", "account")
+                        .WithMany("Orders")
+                        .HasForeignKey("Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("VuTungQuan.Models.Bank", "bank")
                         .WithMany("Orders")
                         .HasForeignKey("Id")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -358,6 +385,10 @@ namespace VuTungQuan.Migrations
                     b.Navigation("FootballPitch");
 
                     b.Navigation("account");
+
+                    b.Navigation("bank");
+
+                    b.Navigation("discount");
                 });
 
             modelBuilder.Entity("VuTungQuan.Models.PitchImage", b =>
@@ -371,7 +402,22 @@ namespace VuTungQuan.Migrations
                     b.Navigation("FootballPitch");
                 });
 
+            modelBuilder.Entity("AccountType", b =>
+                {
+                    b.Navigation("Accounts");
+                });
+
+            modelBuilder.Entity("Discount", b =>
+                {
+                    b.Navigation("Orders");
+                });
+
             modelBuilder.Entity("VuTungQuan.Models.Account", b =>
+                {
+                    b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("VuTungQuan.Models.Bank", b =>
                 {
                     b.Navigation("Orders");
                 });

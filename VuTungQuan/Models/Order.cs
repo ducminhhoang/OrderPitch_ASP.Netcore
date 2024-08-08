@@ -40,6 +40,17 @@ namespace VuTungQuan.Models
         public string Note { get; set; }
 
         [Required]
+        public string BankId { get; set; }
+        [Required]
+        [ForeignKey("BankId")]
+        public Bank bank { get; set; }
+
+        [Required]
+        public string DiscountId { get; set; }
+        [ForeignKey("DiscountId")]
+        public Discount discount { get; set; }
+
+        [Required]
         public int AccountId { get; set; }
 
         [ForeignKey("AccountId")]

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using VuTungQuan.Models;
 
 public class AccountType
 {
@@ -15,4 +16,5 @@ public class AccountType
     public DateTime CreatedAt { get; set; } = DateTime.Now;
 
     public DateTime? UpdatedAt { get; set; } = DateTime.Now;
+    public ICollection<Account> Accounts { get; set; }
 }
