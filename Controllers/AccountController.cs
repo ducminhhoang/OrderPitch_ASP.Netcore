@@ -1,21 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using TestApiPitchOrder.Controllers;
+using TestApiPitchOrder.Data;
 using TestApiPitchOrder.Models;
 using TestApiPitchOrder.Services;
 
 namespace TestApiPitchOrder.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class AccountController : BaseController<Account>
     {
         private readonly IAccountService _accountService;
-
-        public AccountController(IAccountService accountService) : base(accountService)
+        private readonly PitchOrderDbContext _context;
+        public AccountController(IAccountService accountService, PitchOrderDbContext context) : base(accountService)
         {
             _accountService = accountService;
+            _context = context;
         }
+        
+        
        
         [HttpGet("GetAccounts")]
         public async Task<IActionResult> GetAccounts()
