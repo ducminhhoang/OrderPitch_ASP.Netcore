@@ -45,7 +45,7 @@ namespace OrderFootballPitch.Repository
             {
                 _dbSet.Remove(entity);
                 await _context.SaveChangesAsync();
-            }    
+            }
         }
     }
 }

@@ -16,17 +16,17 @@ namespace OrderFootballPitch.Controllers
         {
             try
             {
-                var entities = await _baseService.GetAll();
+            var entities = await _baseService.GetAll();
 
-                if (entities.Count() > 0)
-                {
-                    return Ok(entities);
-                }
-                else
-                {
-                    return NoContent();
-                }
+            if (entities.Count() > 0)
+            {
+                return Ok(entities);
             }
+            else
+            {
+                return NoContent();
+            }
+        }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
