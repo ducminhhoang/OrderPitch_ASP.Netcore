@@ -21,17 +21,17 @@ namespace OrderFootballPitch.Controllers
         {
             try
             {
-                var entities = await _baseService.GetAll();
+            var entities = await _baseService.GetAll();
 
-                if (entities.Any())
-                {
-                    return Ok(entities);
-                }
-                else
-                {
-                    return NoContent();
-                }
+            if (entities.Count() > 0)
+            {
+                return Ok(entities);
             }
+            else
+            {
+                return NoContent();
+            }
+        }
             catch (Exception ex)
             {
                 return BadRequest(new { Message = ex.Message });
@@ -47,12 +47,12 @@ namespace OrderFootballPitch.Controllers
                 if (entity != null)
                 {
                     return Ok(entity);
-                }
-                else
-                {
-                    return NoContent();
-                }
             }
+            else
+            {
+                return NoContent();
+            }
+        }
             catch (Exception ex)
             {
                 return BadRequest(new { Message = ex.Message });
@@ -64,22 +64,23 @@ namespace OrderFootballPitch.Controllers
         public async Task<IActionResult> Post([FromBody] T entity)
         {
             try
-            {
+        {
                 var res = await _baseService.Insert(entity);
                 if (res != null)
-                {
+            {
                     return StatusCode(201, res);
-                }
-                else
-                {
-                    return NoContent();
-                }
             }
+            else
+            {
+                return NoContent();
+            }
+        }
             catch (Exception ex)
             {
                 return BadRequest(new { Message = ex.Message });
             }
         }
+
 
         [HttpPut("{entityId}")]
         public async Task<IActionResult> Put(int entityId, [FromBody] T entity)
@@ -98,8 +99,9 @@ namespace OrderFootballPitch.Controllers
             catch (Exception ex)
             {
                 return BadRequest(new { Message = ex.Message });
-            }
+            } 
         }
+
 
         [HttpDelete("{entityId}")]
         public async Task<IActionResult> Delete(int entityId)
