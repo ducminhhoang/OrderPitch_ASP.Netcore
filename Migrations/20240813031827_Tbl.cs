@@ -202,9 +202,9 @@ namespace TestApiPitchOrder.Migrations
                 columns: new[] { "Id", "CreatedAt", "Name", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5467), "Admin", new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5463) },
-                    { 2, new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5469), "User", new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5468) },
-                    { 3, new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5471), "Guest", new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5470) }
+                    { 1, new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5747), "Admin", new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5742) },
+                    { 2, new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5749), "User", new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5749) },
+                    { 3, new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5751), "Guest", new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5750) }
                 });
 
             migrationBuilder.InsertData(
@@ -212,8 +212,8 @@ namespace TestApiPitchOrder.Migrations
                 columns: new[] { "Id", "BankNumber", "CreatedAt", "Image", "Name", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1, "123456789", new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5670), "Resources\\Banks\\vcb.jpg", "Vietcombank", null },
-                    { 2, "987654321", new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5672), "Resources\\Banks\\mbbank.jpg", "Mbbank", null }
+                    { 1, "123456789", new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5891), "Resources\\Banks\\vcb.jpg", "Vietcombank", null },
+                    { 2, "987654321", new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5893), "Resources\\Banks\\mbbank.jpg", "Mbbank", null }
                 });
 
             migrationBuilder.InsertData(
@@ -221,8 +221,8 @@ namespace TestApiPitchOrder.Migrations
                 columns: new[] { "Id", "Amount", "Code", "CreatedAt", "EndDate", "UpdatedAt", "UsageLimit" },
                 values: new object[,]
                 {
-                    { 1, 10, "Group5MaiDinh", new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5688), new DateTime(2024, 9, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5684), null, 1000000.0 },
-                    { 2, 20, "Deptraicogisai", new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5691), new DateTime(2024, 10, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5690), null, 500000.0 }
+                    { 1, 10, "Group5MaiDinh", new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5908), new DateTime(2024, 9, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5904), null, 1000000.0 },
+                    { 2, 20, "Deptraicogisai", new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5910), new DateTime(2024, 10, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5909), null, 500000.0 }
                 });
 
             migrationBuilder.InsertData(
@@ -230,10 +230,10 @@ namespace TestApiPitchOrder.Migrations
                 columns: new[] { "Id", "CreatedAt", "Description", "Quantity", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5651), "5v5", 5, null },
-                    { 2, new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5653), "7v7", 7, null },
-                    { 3, new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5654), "9v9", 9, null },
-                    { 4, new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5655), "11v11", 11, null }
+                    { 1, new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5874), "5v5", 5, null },
+                    { 2, new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5875), "7v7", 7, null },
+                    { 3, new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5876), "9v9", 9, null },
+                    { 4, new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5877), "11v11", 11, null }
                 });
 
             migrationBuilder.InsertData(
@@ -241,11 +241,11 @@ namespace TestApiPitchOrder.Migrations
                 columns: new[] { "Id", "AccountTypeId", "Address", "CreatedAt", "Email", "Name", "Password", "Phone", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1, 1, "Admin Address", new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5899), "admin@gmail.com", "Admin1", "8ddcff3a80f4189ca1c9d4d902c3c909", "1234567890", new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5897) },
-                    { 2, 2, "Ha Noi", new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5902), "dmh@example.com", "Duc Minh Hoang", "25d55ad283aa400af464c76d713c07ad", "0987654321", new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5901) },
-                    { 3, 2, "Ha Noi", new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5905), "vtq@gamil.com", "Vu Tung Quan", "25d55ad283aa400af464c76d713c07ad", "0987654322", new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5903) },
-                    { 4, 2, "Ha Noi", new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5907), "vmd@gmail.com", "Vu Minh Duc", "25d55ad283aa400af464c76d713c07ad", "0987654324", new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5906) },
-                    { 5, 2, "Ha Noi", new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5909), "nad@gmail.com", "Nguyen Ai Dan", "25d55ad283aa400af464c76d713c07ad", "0987654325", new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5908) }
+                    { 1, 1, "Admin Address", new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5945), "admin@gmail.com", "Admin1", "8ddcff3a80f4189ca1c9d4d902c3c909", "1234567890", new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5942) },
+                    { 2, 2, "Ha Noi", new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5947), "dmh@example.com", "Duc Minh Hoang", "25d55ad283aa400af464c76d713c07ad", "0987654321", new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5946) },
+                    { 3, 2, "Ha Noi", new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5949), "vtq@gamil.com", "Vu Tung Quan", "25d55ad283aa400af464c76d713c07ad", "0987654322", new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5948) },
+                    { 4, 2, "Ha Noi", new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5951), "vmd@gmail.com", "Vu Minh Duc", "25d55ad283aa400af464c76d713c07ad", "0987654324", new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5950) },
+                    { 5, 2, "Ha Noi", new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5953), "nad@gmail.com", "Nguyen Ai Dan", "25d55ad283aa400af464c76d713c07ad", "0987654325", new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5952) }
                 });
 
             migrationBuilder.InsertData(
@@ -253,11 +253,11 @@ namespace TestApiPitchOrder.Migrations
                 columns: new[] { "Id", "CreatedAt", "Description", "IsMaintenance", "Name", "PitchTypeId", "PricePerHour", "TimeEnd", "TimeStart", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5706), "Standard Pitch", false, "Sân bóng Thành Đô", 2, 700000.0, new TimeSpan(0, 23, 0, 0, 0), new TimeSpan(0, 6, 0, 0, 0), null },
-                    { 2, new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5874), "Normal Pitch", false, "Sân bóng Lai Xá", 1, 500000.0, new TimeSpan(0, 23, 0, 0, 0), new TimeSpan(0, 7, 0, 0, 0), null },
-                    { 3, new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5876), "Advanced Pitch", true, "Sân bóng Nguyên Xá", 4, 900000.0, new TimeSpan(0, 17, 0, 0, 0), new TimeSpan(0, 6, 0, 0, 0), null },
-                    { 4, new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5877), "Advanced Pitch", false, "Sân bóng Mai Dịch", 3, 750000.0, new TimeSpan(0, 23, 0, 0, 0), new TimeSpan(0, 5, 0, 0, 0), null },
-                    { 5, new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5879), "Advanced Pitch", false, "Sân bóng Minh Khai", 2, 700000.0, new TimeSpan(0, 17, 0, 0, 0), new TimeSpan(0, 8, 0, 0, 0), null }
+                    { 1, new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5925), "Standard Pitch", false, "Sân bóng Thành Đô", 2, 700000.0, new TimeSpan(0, 23, 0, 0, 0), new TimeSpan(0, 6, 0, 0, 0), null },
+                    { 2, new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5927), "Normal Pitch", false, "Sân bóng Lai Xá", 1, 500000.0, new TimeSpan(0, 23, 0, 0, 0), new TimeSpan(0, 7, 0, 0, 0), null },
+                    { 3, new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5928), "Advanced Pitch", true, "Sân bóng Nguyên Xá", 4, 900000.0, new TimeSpan(0, 17, 0, 0, 0), new TimeSpan(0, 6, 0, 0, 0), null },
+                    { 4, new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5930), "Advanced Pitch", false, "Sân bóng Mai Dịch", 3, 750000.0, new TimeSpan(0, 23, 0, 0, 0), new TimeSpan(0, 5, 0, 0, 0), null },
+                    { 5, new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5931), "Advanced Pitch", false, "Sân bóng Minh Khai", 2, 700000.0, new TimeSpan(0, 17, 0, 0, 0), new TimeSpan(0, 8, 0, 0, 0), null }
                 });
 
             migrationBuilder.InsertData(
@@ -265,10 +265,10 @@ namespace TestApiPitchOrder.Migrations
                 columns: new[] { "Id", "AccountId", "BankId", "CreatedAt", "Deposit", "DiscountId", "Email", "EndAt", "FootballPitchId", "Name", "Note", "Phone", "StartAt", "Status", "Total", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1, 2, 1, new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5955), 100000.0, null, "dmh@gamil.com", new DateTime(2024, 8, 10, 23, 20, 42, 930, DateTimeKind.Local).AddTicks(5953), 1, "Order_1", null, "1234567890", new DateTime(2024, 8, 10, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5948), 3, 1000000.0, null },
-                    { 2, 3, null, new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5959), 150000.0, 2, "order2@example.com", new DateTime(2024, 8, 12, 23, 20, 42, 930, DateTimeKind.Local).AddTicks(5958), 2, "Order_2", null, "0987654321", new DateTime(2024, 8, 12, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5957), 0, 700000.0, null },
-                    { 3, 1, null, new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5963), 150000.0, 2, "order2@example.com", new DateTime(2024, 8, 13, 23, 20, 42, 930, DateTimeKind.Local).AddTicks(5962), 2, "Order_3", null, "0987654321", new DateTime(2024, 8, 13, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5961), 2, 700000.0, null },
-                    { 4, 3, null, new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5965), 150000.0, 2, "order2@example.com", new DateTime(2024, 8, 13, 23, 20, 42, 930, DateTimeKind.Local).AddTicks(5964), 2, "Order_4", null, "0987654321", new DateTime(2024, 8, 14, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5964), 1, 700000.0, null }
+                    { 1, 2, 1, new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5991), 100000.0, null, "dmh@gamil.com", new DateTime(2024, 8, 12, 12, 18, 26, 928, DateTimeKind.Local).AddTicks(5988), 1, "Order_1", null, "1234567890", new DateTime(2024, 8, 12, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5984), 3, 1000000.0, null },
+                    { 2, 3, null, new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5999), 150000.0, 2, "order2@example.com", new DateTime(2024, 8, 14, 12, 18, 26, 928, DateTimeKind.Local).AddTicks(5998), 2, "Order_2", null, "0987654321", new DateTime(2024, 8, 14, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5997), 0, 700000.0, null },
+                    { 3, 1, null, new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(6002), 150000.0, 2, "order2@example.com", new DateTime(2024, 8, 15, 12, 18, 26, 928, DateTimeKind.Local).AddTicks(6001), 2, "Order_3", null, "0987654321", new DateTime(2024, 8, 15, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(6000), 2, 700000.0, null },
+                    { 4, 3, null, new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(6005), 150000.0, 2, "order2@example.com", new DateTime(2024, 8, 15, 12, 18, 26, 928, DateTimeKind.Local).AddTicks(6003), 2, "Order_4", null, "0987654321", new DateTime(2024, 8, 16, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(6003), 1, 700000.0, null }
                 });
 
             migrationBuilder.InsertData(

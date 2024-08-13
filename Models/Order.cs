@@ -41,16 +41,16 @@ namespace TestApiPitchOrder.Models
         public string? Note { get; set; }
 
         [Required]
-        public int AccountId { get; set; }
+        public int? AccountId { get; set; }
 
         [ForeignKey("AccountId")]
-        public Account Account { get; set; }
+        public Account? Account { get; set; }
 
         [Required]
-        public int FootballPitchId { get; set; }
+        public int? FootballPitchId { get; set; }
 
         [ForeignKey("FootballPitchId")]
-        public FootballPitch FootballPitch { get; set; }
+        public FootballPitch? FootballPitch { get; set; }
 
         public int? DiscountId { get; set; }
 

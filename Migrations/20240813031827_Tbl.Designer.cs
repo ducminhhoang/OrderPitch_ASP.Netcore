@@ -12,7 +12,7 @@ using TestApiPitchOrder.Data;
 namespace TestApiPitchOrder.Migrations
 {
     [DbContext(typeof(PitchOrderDbContext))]
-    [Migration("20240811142043_Tbl")]
+    [Migration("20240813031827_Tbl")]
     partial class Tbl
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,7 +32,8 @@ namespace TestApiPitchOrder.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("AccountTypeId")
+                    b.Property<int?>("AccountTypeId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Address")
@@ -80,60 +81,60 @@ namespace TestApiPitchOrder.Migrations
                             Id = 1,
                             AccountTypeId = 1,
                             Address = "Admin Address",
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5899),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5945),
                             Email = "admin@gmail.com",
                             Name = "Admin1",
                             Password = "8ddcff3a80f4189ca1c9d4d902c3c909",
                             Phone = "1234567890",
-                            UpdatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5897)
+                            UpdatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5942)
                         },
                         new
                         {
                             Id = 2,
                             AccountTypeId = 2,
                             Address = "Ha Noi",
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5902),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5947),
                             Email = "dmh@example.com",
                             Name = "Duc Minh Hoang",
                             Password = "25d55ad283aa400af464c76d713c07ad",
                             Phone = "0987654321",
-                            UpdatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5901)
+                            UpdatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5946)
                         },
                         new
                         {
                             Id = 3,
                             AccountTypeId = 2,
                             Address = "Ha Noi",
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5905),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5949),
                             Email = "vtq@gamil.com",
                             Name = "Vu Tung Quan",
                             Password = "25d55ad283aa400af464c76d713c07ad",
                             Phone = "0987654322",
-                            UpdatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5903)
+                            UpdatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5948)
                         },
                         new
                         {
                             Id = 4,
                             AccountTypeId = 2,
                             Address = "Ha Noi",
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5907),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5951),
                             Email = "vmd@gmail.com",
                             Name = "Vu Minh Duc",
                             Password = "25d55ad283aa400af464c76d713c07ad",
                             Phone = "0987654324",
-                            UpdatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5906)
+                            UpdatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5950)
                         },
                         new
                         {
                             Id = 5,
                             AccountTypeId = 2,
                             Address = "Ha Noi",
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5909),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5953),
                             Email = "nad@gmail.com",
                             Name = "Nguyen Ai Dan",
                             Password = "25d55ad283aa400af464c76d713c07ad",
                             Phone = "0987654325",
-                            UpdatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5908)
+                            UpdatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5952)
                         });
                 });
 
@@ -166,23 +167,23 @@ namespace TestApiPitchOrder.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5467),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5747),
                             Name = "Admin",
-                            UpdatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5463)
+                            UpdatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5742)
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5469),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5749),
                             Name = "User",
-                            UpdatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5468)
+                            UpdatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5749)
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5471),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5751),
                             Name = "Guest",
-                            UpdatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5470)
+                            UpdatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5750)
                         });
                 });
 
@@ -226,7 +227,7 @@ namespace TestApiPitchOrder.Migrations
                         {
                             Id = 1,
                             BankNumber = "123456789",
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5670),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5891),
                             Image = "Resources\\Banks\\vcb.jpg",
                             Name = "Vietcombank"
                         },
@@ -234,7 +235,7 @@ namespace TestApiPitchOrder.Migrations
                         {
                             Id = 2,
                             BankNumber = "987654321",
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5672),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5893),
                             Image = "Resources\\Banks\\mbbank.jpg",
                             Name = "Mbbank"
                         });
@@ -280,8 +281,8 @@ namespace TestApiPitchOrder.Migrations
                             Id = 1,
                             Amount = 10,
                             Code = "Group5MaiDinh",
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5688),
-                            EndDate = new DateTime(2024, 9, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5684),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5908),
+                            EndDate = new DateTime(2024, 9, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5904),
                             UsageLimit = 1000000.0
                         },
                         new
@@ -289,8 +290,8 @@ namespace TestApiPitchOrder.Migrations
                             Id = 2,
                             Amount = 20,
                             Code = "Deptraicogisai",
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5691),
-                            EndDate = new DateTime(2024, 10, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5690),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5910),
+                            EndDate = new DateTime(2024, 10, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5909),
                             UsageLimit = 500000.0
                         });
                 });
@@ -346,7 +347,7 @@ namespace TestApiPitchOrder.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5706),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5925),
                             Description = "Standard Pitch",
                             IsMaintenance = false,
                             Name = "Sân bóng Thành Đô",
@@ -358,7 +359,7 @@ namespace TestApiPitchOrder.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5874),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5927),
                             Description = "Normal Pitch",
                             IsMaintenance = false,
                             Name = "Sân bóng Lai Xá",
@@ -370,7 +371,7 @@ namespace TestApiPitchOrder.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5876),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5928),
                             Description = "Advanced Pitch",
                             IsMaintenance = true,
                             Name = "Sân bóng Nguyên Xá",
@@ -382,7 +383,7 @@ namespace TestApiPitchOrder.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5877),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5930),
                             Description = "Advanced Pitch",
                             IsMaintenance = false,
                             Name = "Sân bóng Mai Dịch",
@@ -394,7 +395,7 @@ namespace TestApiPitchOrder.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5879),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5931),
                             Description = "Advanced Pitch",
                             IsMaintenance = false,
                             Name = "Sân bóng Minh Khai",
@@ -413,7 +414,8 @@ namespace TestApiPitchOrder.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("AccountId")
+                    b.Property<int?>("AccountId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("BankId")
@@ -438,7 +440,8 @@ namespace TestApiPitchOrder.Migrations
                     b.Property<DateTime>("EndAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("FootballPitchId")
+                    b.Property<int?>("FootballPitchId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -484,14 +487,14 @@ namespace TestApiPitchOrder.Migrations
                             Id = 1,
                             AccountId = 2,
                             BankId = 1,
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5955),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5991),
                             Deposit = 100000.0,
                             Email = "dmh@gamil.com",
-                            EndAt = new DateTime(2024, 8, 10, 23, 20, 42, 930, DateTimeKind.Local).AddTicks(5953),
+                            EndAt = new DateTime(2024, 8, 12, 12, 18, 26, 928, DateTimeKind.Local).AddTicks(5988),
                             FootballPitchId = 1,
                             Name = "Order_1",
                             Phone = "1234567890",
-                            StartAt = new DateTime(2024, 8, 10, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5948),
+                            StartAt = new DateTime(2024, 8, 12, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5984),
                             Status = 3,
                             Total = 1000000.0
                         },
@@ -499,15 +502,15 @@ namespace TestApiPitchOrder.Migrations
                         {
                             Id = 2,
                             AccountId = 3,
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5959),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5999),
                             Deposit = 150000.0,
                             DiscountId = 2,
                             Email = "order2@example.com",
-                            EndAt = new DateTime(2024, 8, 12, 23, 20, 42, 930, DateTimeKind.Local).AddTicks(5958),
+                            EndAt = new DateTime(2024, 8, 14, 12, 18, 26, 928, DateTimeKind.Local).AddTicks(5998),
                             FootballPitchId = 2,
                             Name = "Order_2",
                             Phone = "0987654321",
-                            StartAt = new DateTime(2024, 8, 12, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5957),
+                            StartAt = new DateTime(2024, 8, 14, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5997),
                             Status = 0,
                             Total = 700000.0
                         },
@@ -515,15 +518,15 @@ namespace TestApiPitchOrder.Migrations
                         {
                             Id = 3,
                             AccountId = 1,
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5963),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(6002),
                             Deposit = 150000.0,
                             DiscountId = 2,
                             Email = "order2@example.com",
-                            EndAt = new DateTime(2024, 8, 13, 23, 20, 42, 930, DateTimeKind.Local).AddTicks(5962),
+                            EndAt = new DateTime(2024, 8, 15, 12, 18, 26, 928, DateTimeKind.Local).AddTicks(6001),
                             FootballPitchId = 2,
                             Name = "Order_3",
                             Phone = "0987654321",
-                            StartAt = new DateTime(2024, 8, 13, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5961),
+                            StartAt = new DateTime(2024, 8, 15, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(6000),
                             Status = 2,
                             Total = 700000.0
                         },
@@ -531,15 +534,15 @@ namespace TestApiPitchOrder.Migrations
                         {
                             Id = 4,
                             AccountId = 3,
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5965),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(6005),
                             Deposit = 150000.0,
                             DiscountId = 2,
                             Email = "order2@example.com",
-                            EndAt = new DateTime(2024, 8, 13, 23, 20, 42, 930, DateTimeKind.Local).AddTicks(5964),
+                            EndAt = new DateTime(2024, 8, 15, 12, 18, 26, 928, DateTimeKind.Local).AddTicks(6003),
                             FootballPitchId = 2,
                             Name = "Order_4",
                             Phone = "0987654321",
-                            StartAt = new DateTime(2024, 8, 14, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5964),
+                            StartAt = new DateTime(2024, 8, 16, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(6003),
                             Status = 1,
                             Total = 700000.0
                         });
@@ -673,28 +676,28 @@ namespace TestApiPitchOrder.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5651),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5874),
                             Description = "5v5",
                             Quantity = 5
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5653),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5875),
                             Description = "7v7",
                             Quantity = 7
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5654),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5876),
                             Description = "9v9",
                             Quantity = 9
                         },
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2024, 8, 11, 21, 20, 42, 930, DateTimeKind.Local).AddTicks(5655),
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5877),
                             Description = "11v11",
                             Quantity = 11
                         });

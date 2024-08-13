@@ -19,6 +19,6 @@ namespace TestApiPitchOrder.Models
 
         public DateTime? UpdatedAt { get; set; } = DateTime.Now;
 
-        public ICollection<Account> Accounts { get; set; }
+        public ICollection<Account>? Accounts { get; set; }
     }
 }

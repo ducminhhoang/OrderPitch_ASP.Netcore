@@ -54,7 +54,7 @@ namespace TestApiPitchOrder.Controllers
         public async Task<IActionResult> AddAccount(Account account)
         {
             await _accountService.AddAccount(account);
-            return StatusCode(201);
+            return Ok("Add sucessfully");
         }
 
         [HttpPut("UpdateAccount")]
