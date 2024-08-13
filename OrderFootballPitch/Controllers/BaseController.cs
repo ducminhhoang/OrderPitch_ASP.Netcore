@@ -9,8 +9,6 @@ namespace OrderFootballPitch.Controllers
     //[Authorize(Policy = "CustomerAndAdmin")]
     public class BaseController<T> : Controller where T : class
     {
-        private readonly IBaseService<T> _baseService;
-
         public BaseController(IBaseService<T> baseService)
         {
             _baseService = baseService;
@@ -34,19 +32,11 @@ namespace OrderFootballPitch.Controllers
         }
             catch (Exception ex)
             {
-                return BadRequest(new { Message = ex.Message });
             }
         }
 
-        [HttpGet("{entityId}")]
-        public async Task<IActionResult> GetById(int entityId)
         {
-            try
             {
-                var entity = await _baseService.GetById(entityId);
-                if (entity != null)
-                {
-                    return Ok(entity);
             }
             else
             {
@@ -60,15 +50,8 @@ namespace OrderFootballPitch.Controllers
         }
 
 
-        [HttpPost]
-        public async Task<IActionResult> Post([FromBody] T entity)
         {
-            try
-        {
-                var res = await _baseService.Insert(entity);
-                if (res != null)
             {
-                    return StatusCode(201, res);
             }
             else
             {
@@ -82,17 +65,13 @@ namespace OrderFootballPitch.Controllers
         }
 
 
-        [HttpPut]
-        public async Task<IActionResult> Put([FromBody] T entity)
+        [HttpPut("{entityId}")]
         {
             try
             {
-                await _baseService.Update(entity);
-                return Ok(new { Message = "Update sucessfully" });
             }
             catch (Exception ex)
             {
-                return BadRequest(new { Message = ex.Message });
             } 
         }
 
@@ -103,11 +82,8 @@ namespace OrderFootballPitch.Controllers
             try
             {
                 await _baseService.Delete(entityId);
-                return Ok(new { Message = "Delete Sucessfully" });
             }
-            catch (Exception ex)
             {
-                return BadRequest(new { Message = ex.Message });
             }
         }
     }
