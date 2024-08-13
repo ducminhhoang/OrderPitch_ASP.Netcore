@@ -3,10 +3,8 @@ using Microsoft.OpenApi.Models;
 using OrderFootballPitch.Data;
 using OrderFootballPitch.Repository;
 using OrderFootballPitch.Services;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,39 +15,24 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<PitchOrderDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("sqlserver")).EnableSensitiveDataLogging());
 
-
-//set authetication
-//builder.Services.AddAuthentication(options =>
-//{
-//    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-//    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-//}).AddJwtBearer(options =>
-//{
-//    options.TokenValidationParameters = new TokenValidationParameters
-//    {
-//        ValidateIssuer = true,
-//        ValidateAudience = true,
-//        ValidateLifetime = true,
-//        ValidateIssuerSigningKey = true,
-//        ValidIssuer = builder.Configuration["Jwt:Issuer"],
-//        ValidAudience = builder.Configuration["Jwt:Audience"],
-//        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
-//    };
-//});
-
-//// Set up authorization policies
-//builder.Services.AddAuthorization(options =>
-//{
-//    options.AddPolicy("AdminOnly", policy => policy.RequireRole("admin"));
-//    options.AddPolicy("CustomerAndAdmin", policy => policy.RequireRole("admin", "customer"));
-//});
+builder.Services.AddCors(options => options.AddPolicy("MyPolicy", builder =>
+        builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                 .AllowAnyHeader()
+    )
+);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddNewtonsoftJson(options =>
+{
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Demo.Api", Version = "v1", Description = "Api DEMO" });
 
     // Set the comments path for the Swagger JSON and UI.
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
@@ -58,8 +41,6 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
-
-// set ip call
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAllOrigins", policy =>
@@ -69,7 +50,6 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod();
     });
 });
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -78,11 +58,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors("AllowAllOrigins");
+app.UseRouting();
 app.UseHttpsRedirection();
-//app.UseAuthentication();
+app.UseCors("MyPolicy");
 app.UseAuthorization();
 
-app.MapControllers();
-
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 app.Run();

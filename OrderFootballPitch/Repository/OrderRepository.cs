@@ -3,7 +3,6 @@ using OrderFootballPitch.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using OrderFootballPitch.CustomExceptions;
-using OrderFootballPitch.DTOs;
 
 namespace OrderFootballPitch.Repository
 {
@@ -98,45 +97,6 @@ namespace OrderFootballPitch.Repository
                     return await _context.Orders.Where(o => o.AccountId == idCustomer).ToListAsync();
                 }    
             }
-        }
-
-        public async Task<Pagging<Order>> GetOrdersPagging(int page, int pageSize)
-        {
-            var query = _context.Orders.AsQueryable();
-
-            var totalItems = await query.CountAsync();
-            var orders = await query
-                .Skip((page - 1) * pageSize)
-                .Take(pageSize)
-                .Select(o => new Order
-                {
-                    Id = o.Id,
-                    Name = o.Name,
-                    Phone = o.Phone,
-                    Email = o.Email,
-                    Total = o.Total,
-                    StartAt = o.StartAt,
-                    EndAt = o.EndAt,
-                    Status = o.Status,
-                    CreatedAt = o.CreatedAt,
-                    UpdatedAt = o.UpdatedAt,
-                    Deposit = o.Deposit,
-                    DiscountId = o.DiscountId,
-                    FootballPitchId = o.FootballPitchId,
-                    AccountId = o.AccountId,
-                    BankId = o.BankId,
-                    Note = o.Note
-                })
-                .ToListAsync();
-
-            return new Pagging<Order>
-            {
-                Items = orders,
-                PageNumber = page,
-                PageSize = pageSize,
-                TotalItems = totalItems,
-                TotalPages = (int)Math.Ceiling((double)totalItems / pageSize)
-            };
         }
     }
 }

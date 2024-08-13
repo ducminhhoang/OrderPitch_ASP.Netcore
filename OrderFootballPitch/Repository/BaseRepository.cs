@@ -33,7 +33,6 @@ namespace OrderFootballPitch.Repository
 
         public async Task Update(T entity)
         {
-            _context.Entry(entity).State = EntityState.Detached;
             _dbSet.Attach(entity);
             _context.Entry(entity).State = EntityState.Modified;
             await _context.SaveChangesAsync();

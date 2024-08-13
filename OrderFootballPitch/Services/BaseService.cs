@@ -24,26 +24,21 @@ namespace OrderFootballPitch.Services
             return entity;
         }
 
-        protected virtual async Task ValidateCustomInsert(T entity, bool isInsert)
+        protected virtual async Task ValidateCustom(T entity, bool isInsert)
         {
 
         }
 
-        protected virtual async Task ValidateCustomUpdate(T entity, bool isInsert)
-        {
-
-        }
         public async Task<T> Insert(T entity)
         {
             // Validate dữ liệu 
-            await ValidateCustomInsert(entity, true);
-            await ValidateCustomInsert(entity, true);
+            await ValidateCustom(entity, true);
             return await _baseRepository.Insert(entity);
         }
 
         public async Task Update(T entity)
         {
-            await ValidateCustomUpdate(entity, false);
+            await ValidateCustom(entity, false);
             // số bản ghi bị thay đổi 
             await _baseRepository.Update(entity); ;
         }

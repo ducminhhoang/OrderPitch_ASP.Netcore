@@ -1,5 +1,4 @@
-﻿using OrderFootballPitch.DTOs;
-using OrderFootballPitch.Models;
+﻿using OrderFootballPitch.Models;
 
 namespace OrderFootballPitch.Repository
 {
@@ -24,7 +23,5 @@ namespace OrderFootballPitch.Repository
         Task<string> GetStatusOrderById(int orderId);
 
         Task<IEnumerable<Order>> GetOrdersByIdCustomer(int idCustomer);
-
-        Task<Pagging<Order>> GetOrdersPagging(int page, int pageSize);
     }
 }

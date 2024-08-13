@@ -44,11 +44,17 @@ namespace OrderFootballPitch.Services
                 {
                     throw new OrderException("Order time are outside opening hours.");
                 }
+                Console.WriteLine("Kiem tra xong");
             }
             else
             {
                 throw new OrderException("Value Error");
             }    
+        }
+
+        public async Task<IEnumerable<Order>> GetOrdersByIdCustomer(int IdCustomer)
+        {
+            return await _orderRepository.GetOrdersByIdCustomer(IdCustomer);
         }
     }
 }

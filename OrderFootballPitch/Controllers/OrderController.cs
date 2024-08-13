@@ -1,14 +1,11 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using OrderFootballPitch.DTOs;
 using OrderFootballPitch.Models;
 using OrderFootballPitch.Repository;
 using OrderFootballPitch.Services;
 
-
 namespace OrderFootballPitch.Controllers
 {
-    //[Authorize(Roles = "admin, customer")]
     [Route("api/v1/[controller]s")]
     [ApiController]
     public class OrderController : BaseController<Order>
@@ -20,7 +17,6 @@ namespace OrderFootballPitch.Controllers
             _orderService = orderService;
         }
 
-        //[Authorize(Roles = "customer")]
         [HttpPost("order")]
         public async Task<IActionResult> CreateOrder([FromBody] OrderDTO orderDto)
         {
@@ -51,39 +47,6 @@ namespace OrderFootballPitch.Controllers
             }
         }
 
-        [HttpPut("eidt/{entityId}")]
-        public async Task<IActionResult> Put(int entityId, [FromBody] OrderDTO entity)
-        {
-            try
-            {
-                var existingOrder = await _orderService.GetById(entityId);
-                if (existingOrder == null)
-                {
-                    return NotFound();
-                }
-                existingOrder.Name = entity.Name;
-                existingOrder.Phone = entity.Phone;
-                existingOrder.Email = entity.Email;
-                existingOrder.Deposit = entity.Deposit;
-                existingOrder.StartAt = entity.StartAt;
-                existingOrder.EndAt = entity.EndAt;
-                existingOrder.Total = entity.Total;
-                existingOrder.Status = (StatusOrder)entity.Status;
-                existingOrder.Note = entity.Note;
-                existingOrder.DiscountId = entity.DiscountId;
-                existingOrder.BankId = entity.BankId;
-                existingOrder.UpdatedAt = DateTime.UtcNow;
-
-                await _orderService.Update(existingOrder);
-                return Ok(new { Message = "Sửa thành công" });
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { Message = ex.Message });
-            }
-        }
-
-        //[Authorize(Roles = "customer")]
         [HttpGet("Orders/{customerId}")]
         public async Task<IActionResult> GetOrdersByCustomer(int customerId)
         {
@@ -93,22 +56,6 @@ namespace OrderFootballPitch.Controllers
                 return NotFound(new { Message = $"No orders found for customer with ID {customerId}" });
             }
             return Ok(orders);
-        }
-
-        // GET api/v1/orders?page=1
-        //[Authorize(Roles = "admin, customer")]
-        [HttpGet("list")]
-        public async Task<IActionResult> GetAllPage([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
-        {
-            try
-            {
-                var orders = await _orderService.GetOrdersPagging(page, pageSize);
-                return Ok(orders);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { Message = ex.Message });
-            }
         }
     }
 }
