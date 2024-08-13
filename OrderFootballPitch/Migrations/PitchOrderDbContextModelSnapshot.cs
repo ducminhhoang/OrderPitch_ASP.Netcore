@@ -30,7 +30,8 @@ namespace OrderFootballPitch.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("AccountTypeId")
+                    b.Property<int?>("AccountTypeId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Address")
@@ -78,60 +79,100 @@ namespace OrderFootballPitch.Migrations
                             Id = 1,
                             AccountTypeId = 1,
                             Address = "Admin Address",
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6414),
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5945),
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                             Email = "admin@gmail.com",
                             Name = "Admin1",
                             Password = "8ddcff3a80f4189ca1c9d4d902c3c909",
                             Phone = "1234567890",
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             UpdatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6412)
+=======
+                            UpdatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5942)
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                         },
                         new
                         {
                             Id = 2,
                             AccountTypeId = 2,
                             Address = "Ha Noi",
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6417),
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5947),
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                             Email = "dmh@example.com",
                             Name = "Duc Minh Hoang",
                             Password = "25d55ad283aa400af464c76d713c07ad",
                             Phone = "0987654321",
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             UpdatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6416)
+=======
+                            UpdatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5946)
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                         },
                         new
                         {
                             Id = 3,
                             AccountTypeId = 2,
                             Address = "Ha Noi",
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6419),
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5949),
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                             Email = "vtq@gamil.com",
                             Name = "Vu Tung Quan",
                             Password = "25d55ad283aa400af464c76d713c07ad",
                             Phone = "0987654322",
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             UpdatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6418)
+=======
+                            UpdatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5948)
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                         },
                         new
                         {
                             Id = 4,
                             AccountTypeId = 2,
                             Address = "Ha Noi",
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6421),
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5951),
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                             Email = "vmd@gmail.com",
                             Name = "Vu Minh Duc",
                             Password = "25d55ad283aa400af464c76d713c07ad",
                             Phone = "0987654324",
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             UpdatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6420)
+=======
+                            UpdatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5950)
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                         },
                         new
                         {
                             Id = 5,
                             AccountTypeId = 2,
                             Address = "Ha Noi",
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6423),
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5953),
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                             Email = "nad@gmail.com",
                             Name = "Nguyen Ai Dan",
                             Password = "25d55ad283aa400af464c76d713c07ad",
                             Phone = "0987654325",
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             UpdatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6422)
+=======
+                            UpdatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5952)
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                         });
                 });
 
@@ -164,23 +205,41 @@ namespace OrderFootballPitch.Migrations
                         new
                         {
                             Id = 1,
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6213),
                             Name = "Admin",
                             UpdatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6209)
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5747),
+                            Name = "Admin",
+                            UpdatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5742)
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                         },
                         new
                         {
                             Id = 2,
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6215),
                             Name = "User",
                             UpdatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6214)
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5749),
+                            Name = "User",
+                            UpdatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5749)
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                         },
                         new
                         {
                             Id = 3,
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6217),
                             Name = "Guest",
                             UpdatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6216)
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5751),
+                            Name = "Guest",
+                            UpdatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5750)
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                         });
                 });
 
@@ -224,7 +283,11 @@ namespace OrderFootballPitch.Migrations
                         {
                             Id = 1,
                             BankNumber = "123456789",
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6359),
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5891),
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                             Image = "Resources\\Banks\\vcb.jpg",
                             Name = "Vietcombank"
                         },
@@ -232,7 +295,11 @@ namespace OrderFootballPitch.Migrations
                         {
                             Id = 2,
                             BankNumber = "987654321",
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6360),
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5893),
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                             Image = "Resources\\Banks\\mbbank.jpg",
                             Name = "Mbbank"
                         });
@@ -278,8 +345,13 @@ namespace OrderFootballPitch.Migrations
                             Id = 1,
                             Amount = 10,
                             Code = "Group5MaiDinh",
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6376),
                             EndDate = new DateTime(2024, 9, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6371),
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5908),
+                            EndDate = new DateTime(2024, 9, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5904),
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                             UsageLimit = 1000000.0
                         },
                         new
@@ -287,8 +359,13 @@ namespace OrderFootballPitch.Migrations
                             Id = 2,
                             Amount = 20,
                             Code = "Deptraicogisai",
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6379),
                             EndDate = new DateTime(2024, 10, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6378),
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5910),
+                            EndDate = new DateTime(2024, 10, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5909),
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                             UsageLimit = 500000.0
                         });
                 });
@@ -344,7 +421,11 @@ namespace OrderFootballPitch.Migrations
                         new
                         {
                             Id = 1,
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6393),
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5925),
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                             Description = "Standard Pitch",
                             IsMaintenance = false,
                             Name = "Sân bóng Thành Đô",
@@ -356,7 +437,11 @@ namespace OrderFootballPitch.Migrations
                         new
                         {
                             Id = 2,
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6395),
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5927),
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                             Description = "Normal Pitch",
                             IsMaintenance = false,
                             Name = "Sân bóng Lai Xá",
@@ -368,7 +453,11 @@ namespace OrderFootballPitch.Migrations
                         new
                         {
                             Id = 3,
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6396),
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5928),
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                             Description = "Advanced Pitch",
                             IsMaintenance = true,
                             Name = "Sân bóng Nguyên Xá",
@@ -380,7 +469,11 @@ namespace OrderFootballPitch.Migrations
                         new
                         {
                             Id = 4,
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6398),
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5930),
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                             Description = "Advanced Pitch",
                             IsMaintenance = false,
                             Name = "Sân bóng Mai Dịch",
@@ -392,7 +485,11 @@ namespace OrderFootballPitch.Migrations
                         new
                         {
                             Id = 5,
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6400),
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5931),
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                             Description = "Advanced Pitch",
                             IsMaintenance = false,
                             Name = "Sân bóng Minh Khai",
@@ -411,7 +508,8 @@ namespace OrderFootballPitch.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("AccountId")
+                    b.Property<int?>("AccountId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("BankId")
@@ -436,7 +534,8 @@ namespace OrderFootballPitch.Migrations
                     b.Property<DateTime>("EndAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("FootballPitchId")
+                    b.Property<int?>("FootballPitchId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -482,6 +581,7 @@ namespace OrderFootballPitch.Migrations
                             Id = 1,
                             AccountId = 2,
                             BankId = 1,
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6459),
                             Deposit = 100000.0,
                             Email = "dmh@gamil.com",
@@ -490,6 +590,16 @@ namespace OrderFootballPitch.Migrations
                             Name = "Order_1",
                             Phone = "1234567890",
                             StartAt = new DateTime(2024, 8, 8, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6452),
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5991),
+                            Deposit = 100000.0,
+                            Email = "dmh@gamil.com",
+                            EndAt = new DateTime(2024, 8, 12, 12, 18, 26, 928, DateTimeKind.Local).AddTicks(5988),
+                            FootballPitchId = 1,
+                            Name = "Order_1",
+                            Phone = "1234567890",
+                            StartAt = new DateTime(2024, 8, 12, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5984),
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                             Status = 3,
                             Total = 1000000.0
                         },
@@ -497,6 +607,7 @@ namespace OrderFootballPitch.Migrations
                         {
                             Id = 2,
                             AccountId = 3,
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6462),
                             Deposit = 150000.0,
                             DiscountId = 2,
@@ -506,6 +617,17 @@ namespace OrderFootballPitch.Migrations
                             Name = "Order_2",
                             Phone = "0987654321",
                             StartAt = new DateTime(2024, 8, 10, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6460),
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5999),
+                            Deposit = 150000.0,
+                            DiscountId = 2,
+                            Email = "order2@example.com",
+                            EndAt = new DateTime(2024, 8, 14, 12, 18, 26, 928, DateTimeKind.Local).AddTicks(5998),
+                            FootballPitchId = 2,
+                            Name = "Order_2",
+                            Phone = "0987654321",
+                            StartAt = new DateTime(2024, 8, 14, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5997),
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                             Status = 0,
                             Total = 700000.0
                         },
@@ -513,6 +635,7 @@ namespace OrderFootballPitch.Migrations
                         {
                             Id = 3,
                             AccountId = 1,
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6465),
                             Deposit = 150000.0,
                             DiscountId = 2,
@@ -522,6 +645,17 @@ namespace OrderFootballPitch.Migrations
                             Name = "Order_3",
                             Phone = "0987654321",
                             StartAt = new DateTime(2024, 8, 11, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6463),
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(6002),
+                            Deposit = 150000.0,
+                            DiscountId = 2,
+                            Email = "order2@example.com",
+                            EndAt = new DateTime(2024, 8, 15, 12, 18, 26, 928, DateTimeKind.Local).AddTicks(6001),
+                            FootballPitchId = 2,
+                            Name = "Order_3",
+                            Phone = "0987654321",
+                            StartAt = new DateTime(2024, 8, 15, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(6000),
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                             Status = 2,
                             Total = 700000.0
                         },
@@ -529,6 +663,7 @@ namespace OrderFootballPitch.Migrations
                         {
                             Id = 4,
                             AccountId = 3,
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6468),
                             Deposit = 150000.0,
                             DiscountId = 2,
@@ -538,6 +673,17 @@ namespace OrderFootballPitch.Migrations
                             Name = "Order_4",
                             Phone = "0987654321",
                             StartAt = new DateTime(2024, 8, 12, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6466),
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(6005),
+                            Deposit = 150000.0,
+                            DiscountId = 2,
+                            Email = "order2@example.com",
+                            EndAt = new DateTime(2024, 8, 15, 12, 18, 26, 928, DateTimeKind.Local).AddTicks(6003),
+                            FootballPitchId = 2,
+                            Name = "Order_4",
+                            Phone = "0987654321",
+                            StartAt = new DateTime(2024, 8, 16, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(6003),
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                             Status = 1,
                             Total = 700000.0
                         });
@@ -671,28 +817,44 @@ namespace OrderFootballPitch.Migrations
                         new
                         {
                             Id = 1,
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6344),
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5874),
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                             Description = "5v5",
                             Quantity = 5
                         },
                         new
                         {
                             Id = 2,
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6346),
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5875),
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                             Description = "7v7",
                             Quantity = 7
                         },
                         new
                         {
                             Id = 3,
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6347),
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5876),
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                             Description = "9v9",
                             Quantity = 9
                         },
                         new
                         {
                             Id = 4,
+<<<<<<< HEAD:OrderFootballPitch/Migrations/PitchOrderDbContextModelSnapshot.cs
                             CreatedAt = new DateTime(2024, 8, 9, 12, 26, 31, 276, DateTimeKind.Local).AddTicks(6348),
+=======
+                            CreatedAt = new DateTime(2024, 8, 13, 10, 18, 26, 928, DateTimeKind.Local).AddTicks(5877),
+>>>>>>> f2463b8 (update4):Migrations/PitchOrderDbContextModelSnapshot.cs
                             Description = "11v11",
                             Quantity = 11
                         });

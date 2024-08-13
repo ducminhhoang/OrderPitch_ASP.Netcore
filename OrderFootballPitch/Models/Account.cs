@@ -27,16 +27,16 @@ namespace OrderFootballPitch.Models
         public string Address { get; set; }
 
         [Required]
-        public int AccountTypeId { get; set; } = 2;
+        public int? AccountTypeId { get; set; } = 2;
 
         [ForeignKey("AccountTypeId")]
-        public AccountType AccountType { get; set; }
+        public AccountType? AccountType { get; set; }
 
         [Required]
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
         public DateTime? UpdatedAt { get; set; } = DateTime.Now;
 
-        public ICollection<Order> Orders { get; set; }
+        public ICollection<Order>? Orders { get; set; }
     }
 }
