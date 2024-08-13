@@ -82,19 +82,13 @@ namespace OrderFootballPitch.Controllers
         }
 
 
-        [HttpPut("{entityId}")]
-        public async Task<IActionResult> Put(int entityId, [FromBody] T entity)
+        [HttpPut]
+        public async Task<IActionResult> Put([FromBody] T entity)
         {
             try
             {
-                var existingOrder = await _baseService.GetById(entityId);
-                if (existingOrder == null)
-                {
-                    return NotFound();
-                }
-                existingOrder = entity;
-                await _baseService.Update(existingOrder);
-                return Ok(new { Message = "Sửa thành công" });
+                await _baseService.Update(entity);
+                return Ok(new { Message = "Update sucessfully" });
             }
             catch (Exception ex)
             {
@@ -109,7 +103,7 @@ namespace OrderFootballPitch.Controllers
             try
             {
                 await _baseService.Delete(entityId);
-                return Ok(new { Message = "Xóa thành công" });
+                return Ok(new { Message = "Delete Sucessfully" });
             }
             catch (Exception ex)
             {

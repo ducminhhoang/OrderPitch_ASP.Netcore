@@ -46,7 +46,7 @@ namespace OrderFootballPitch.Models
         public Account? Account { get; set; }
 
         [Required]
-        public int? FootballPitchId { get; set; }
+        public int FootballPitchId { get; set; }
 
         [ForeignKey("FootballPitchId")]
         public FootballPitch? FootballPitch { get; set; }

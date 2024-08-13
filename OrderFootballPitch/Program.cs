@@ -40,7 +40,13 @@ builder.Services.AddSwaggerGen(c =>
 });
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IAccountRepository, AccountRepository>();
+builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IFootballPitchRepository, FootballPitchRepository>();
+builder.Services.AddScoped<IFootballPitchService, FootballPitchService>();
 builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAllOrigins", policy =>
@@ -61,7 +67,6 @@ if (app.Environment.IsDevelopment())
 app.UseCors("AllowAllOrigins");
 app.UseRouting();
 app.UseHttpsRedirection();
-app.UseCors("MyPolicy");
 app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>

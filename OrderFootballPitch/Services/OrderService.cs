@@ -44,7 +44,6 @@ namespace OrderFootballPitch.Services
                 {
                     throw new OrderException("Order time are outside opening hours.");
                 }
-                Console.WriteLine("Kiem tra xong");
             }
             else
             {
