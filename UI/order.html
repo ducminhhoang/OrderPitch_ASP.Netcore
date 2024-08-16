@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sân xịn</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>        
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css' rel='stylesheet' />
+    <style>
+        .hidden {
+            display: none;
+        }
+        #calendar {
+            max-width: 100%;
+            max-height: 500px;
+            margin: 0 auto;
+            font-size: 14px;
+        }
+        #order-success-popup {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #close-popup {
+            margin-top: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: -300px; /* Ban đầu sẽ nằm ngoài khung hình */
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: right 0.5s ease-in-out;
+            display: none;
+        }
+
+        .notification.show {
+            display: block;
+            right: 20px; /* Khi hiện lên, sẽ dịch chuyển vào khung hình */
+        }
+    </style>    
+
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <!-- Topbar Start -->
+    <div class="container-fluid">
+        <div class="row bg-secondary py-1 px-xl-5">
+            <div class="col-lg-6 d-none d-lg-block">
+                
+            </div>
+            <div class="col-lg-6 text-center text-lg-right">
+                
+                <div class="d-inline-flex align-items-center d-block d-lg-none">
+                    <a href="" class="btn px-0 ml-2">
+                        <i class="fas fa-heart text-dark"></i>
+                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
+                    </a>
+                    <a href="" class="btn px-0 ml-2">
+                        <i class="fas fa-shopping-cart text-dark"></i>
+                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
+            <div class="col-lg-4">
+                <a href="" class="text-decoration-none">
+                    <span class="h1 text-uppercase text-primary bg-dark px-2">Sân</span>
+                    <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Xịn</span>
+                </a>
+            </div>
+            <div class="col-lg-4 col-6 text-left">
+                <form action="">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for products">
+                        <div class="input-group-append">
+                            <span class="input-group-text bg-transparent text-primary">
+                                <i class="fa fa-search"></i>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Tài khoản của tôi</button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <button class="dropdown-item" type="button" id="view_acc" style="display: none;" onclick="viewAccount()">Xem tài khoản</button>
+                    <button class="dropdown-item" type="button" id="logout" style="display: none;" onclick="logout()">Đăng xuất</button>
+                    <button class="dropdown-item" type="button" id="login" style="display: none;" onclick="login()">Đăng nhập</button>
+                    <button class="dropdown-item" type="button" id="signin" style="display: none;" onclick="signin()">Đăng ký</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-dark mb-30">
+        <div class="row px-xl-5">
+            <div class="col-lg-9">
+                <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
+                    <a href="" class="text-decoration-none d-block d-lg-none">
+                        <span class="h1 text-uppercase text-dark bg-light px-2">Multi</span>
+                        <span class="h1 text-uppercase text-light bg-primary px-2 ml-n1">Shop</span>
+                    </a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto py-0">
+                            <a href="index.html" class="nav-item nav-link">Trang chủ</a>
+                            <a href="contact.html" class="nav-item nav-link">Liên hệ</a>
+                        </div>
+                        <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
+                            <a href="" class="btn px-0">
+                                <i class="fas fa-heart text-primary"></i>
+                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                            </a>
+                            <a href="" class="btn px-0 ml-3">
+                                <i class="fas fa-shopping-cart text-primary"></i>
+                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Breadcrumb Start -->
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <div class="col-12">
+                <nav class="breadcrumb bg-light mb-30">
+                    <a class="breadcrumb-item text-dark" href="index.html">Trang chủ</a>
+                    <a class="breadcrumb-item text-dark" href="detail.html" id="pitched"></a>
+                    <span class="breadcrumb-item active">Liên hệ</span>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+
+    <!-- Checkout Start -->
+    <div class="container-fluid">
+        <form id="orderForm">
+        <div class="row px-xl-5">
+            <div class="col-lg-8" style="max-width: 60%;">
+                <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Thông tin khách hàng</span></h5>
+                <div class="bg-light p-30 mb-5">
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <label for="name">Tên của bạn</label>
+                            <input class="form-control"  id="name" name="name" type="text" placeholder="John">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label for="email">E-mail</label>
+                            <input class="form-control" id="email" name="email" type="email" placeholder="example@email.com" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label for="email">Điện thoại</label>
+                            <input class="form-control" id="tele" name="tele" type="tel" placeholder="" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Mã giảm giá</label>
+                            <input class="form-control" oninput="checkDiscountCode(this.value)" id="code" name="code" type="text">
+                        </div>
+                        <div class="info-box" id="infoBox">
+                            <p><strong>Thời gian bắt đầu:</strong> <span id="startTime">Chưa chọn</span></p>
+                            <p><strong>Thời gian kết thúc:</strong> <span id="endTime">Chưa chọn</span></p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="mb-5">
+                    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Phương thức thanh toán</span></h5>
+                    <div class="bg-light p-30">
+                        <div class="form-group">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" class="custom-control-input" name="payment" id="paypal" value="paypal">
+                                <label class="custom-control-label" for="paypal">Trực tiếp (xác nhận với nhân viên)</label>
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <div class="custom-control custom-radio" id="payment-methods">
+                                <label class="custom-control-label" for="banktransfer">Ngân hàng</label>
+                            </div>
+                            <div id="bank-logo">
+                                <img id="bank-image" src="" alt="Logo ngân hàng" style="display: none; width: 80%;">
+                                <p id="bank-number" style="display: none"></p>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-block btn-primary font-weight-bold py-3">Đặt sân</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4" style="max-width: 40%;flex: 0 0 40%">
+                <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3"></span>Tổng thanh toán</h5>
+                <div class="bg-light p-30 mb-5">
+                    <div id="calendar"></div>
+                    <div class="pt-2">
+                        <div class="mt-2">
+                            <h5 id="total_bill">Tổng tiền: 0 VND</h5>
+                            <h5 id="deposite">Đặt cọc: 0 VND</h5>
+                            <h5 id="savee" style="color: green; display: none;">Tiền giảm: 0 VND</h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </form>
+    </div>
+    <!-- Checkout End -->
+    <div id="notification" class="notification"></div>
+    <!-- Order sucessfully -->
+    <div id="order-success-popup" style="display: none;">
+        <div class="popup-content">
+            <p style="color:green;">Đặt hàng thành công!</p>
+            <p>Có thể xem sân đã đặt của bạn ở trang chủ</p>
+            <button id="close-popup">Đóng</button>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales/vi.js'></script>
+    <script src="js/setup.js"></script>
+    <script>
+        const pitchData = sessionStorage.getItem('selectedPitch');
+        const customerId = sessionStorage.getItem('customerId');
+        var bankId = null;
+        var code = {'id': null, 'amount': 0, "usageLimit": 0};
+        let typingTimer;
+        var save = 0;
+
+
+        if (pitchData && customerId) {
+            const p = JSON.parse(pitchData);
+            document.getElementById('pitched').textContent = p.name;
+        } else {
+            window.location.href = '404.html';
+        }
+        console.log(customerId);
+        
+        
+
+        // chọn ngày
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var infoBox = document.getElementById('infoBox');
+            var startTimeEl = document.getElementById('startTime');
+            var endTimeEl = document.getElementById('endTime');
+            var totalBillEl = document.getElementById('total_bill');
+            var depositeEl = document.getElementById('deposite');
+            var nameInput = document.getElementById('name');
+            var emailInput = document.getElementById('email');
+            var phoneInput = document.getElementById('tele');
+
+            if (save <= 0){
+                document.getElementById('savee').style.display = 'none';
+            }
+
+            if (customerId) {
+                fetch(`https://localhost:7074/api/Account/GetById/${customerId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data && data.name) {
+                            nameInput.value = data.name;
+                            emailInput.value = data.email;
+                            phoneInput.value = data.phone;
+                        }
+                    })
+                    .catch(error => console.error('Lỗi khi lấy tên khách hàng:', error));
+            }
+
+            // Lấy danh sách ngân hàng từ API
+            fetch('https://localhost:7074/api/v1/Orders/banks')
+                .then(response => response.json())
+                .then(banks => {
+                    const paymentMethodsContainer = document.getElementById('payment-methods');
+                    banks.forEach(bank => {
+                        const bankRadio = document.createElement('input');
+                        bankRadio.type = 'radio';
+                        bankRadio.className = 'custom-control-input';
+                        bankRadio.name = "payment";
+                        bankRadio.id = `bank-${bank.id}`;
+                        bankRadio.value = bank.id;
+
+                        const bankLabel = document.createElement('label');
+                        bankLabel.className = 'custom-control-label';
+                        bankLabel.setAttribute('for', `bank-${bank.id}`);
+                        bankLabel.textContent = bank.name;
+
+                        const bankContainer = document.createElement('div');
+                        bankContainer.className = 'custom-control custom-radio';
+                        bankContainer.appendChild(bankRadio);
+                        bankContainer.appendChild(bankLabel);
+
+                        paymentMethodsContainer.appendChild(bankContainer);
+
+                        // Lắng nghe sự kiện khi người dùng chọn ngân hàng
+                        bankRadio.addEventListener('change', function() {
+                            const bankImage = document.getElementById('bank-image');
+                            const bankNumber = document.getElementById('bank-number');
+                            if (this.checked) {
+                                bankImage.src = bank.image; // Đường dẫn tới ảnh ngân hàng
+                                bankImage.style.display = 'block';
+                                bankNumber.textContent = `Số tài khoản: ${bank.bankNumber}`; 
+                                bankNumber.style.display = 'block';
+                                
+                            }
+                            else {
+                                bankNumber.style.display = 'none';
+                                bankImage.style.display = 'none';
+                            }
+                        });
+                    });
+                })
+                .catch(error => console.error('Lỗi khi lấy danh sách ngân hàng:', error));
+
+            var today = new Date();
+            var maxDate = new Date(today);
+            maxDate.setDate(today.getDate() + 15); 
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'timeGridDay',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'timeGridDay,timeGridWeek'
+                },
+                editable: true,
+                selectable: true,
+                initialDate: new Date().toISOString().split('T')[0], // Ngày hôm nay
+                validRange: {
+                    start: new Date().toISOString().split('T')[0],
+                    end: maxDate.toISOString().split('T')[0] // Ngày nhỏ nhất là hôm nay
+                },
+                select: function(info) {
+                    var start = info.start;
+                    var end = info.end;
+                    if (start && end) {
+                        if (start.toDateString() !== end.toDateString()) {
+                            end = new Date(start);
+                            end.setHours(23, 59, 59, 999); // Kết thúc vào cuối ngày
+                        }
+                        var formattedStart = formatDate(start);
+                        var formattedEnd = formatDate(end);
+                        startTimeEl.textContent = formattedStart;
+                        endTimeEl.textContent = formattedEnd;
+                        infoBox.classList.remove('hidden');
+                        document.getElementById('orderForm').dataset.startTime = start;
+                        document.getElementById('orderForm').dataset.endTime = end; 
+                        var durationHours = (end - start) / (1000 * 60 * 60);
+                        if (durationHours < 0) durationHours = 0;
+                        const p = JSON.parse(pitchData);
+                        var pricePitch = p.price;
+                        var save = durationHours * pricePitch * code.amount / 100;
+                        if (save > code.usageLimit)
+                        {
+                            save = code.usageLimit;
+                        }
+                        var totalBill = durationHours * pricePitch - save;
+                        var deposite = totalBill * 0.2; // 20% đặt cọc
+
+                        totalBillEl.textContent = `Tổng tiền: ${totalBill.toLocaleString('vi-VN')} VND`;
+                        depositeEl.textContent = `Đặt cọc: ${deposite.toLocaleString('vi-VN')} VND`;
+                        document.getElementById('savee').style.display = 'block';
+                        document.getElementById('savee').textContent = `Tiết kiệm: ${save.toLocaleString('vi-VN')} VND`;
+                    }
+                    
+                }
+            });
+
+            calendar.render();
+
+            document.getElementById('orderForm').addEventListener('submit', function(e) {
+                e.preventDefault(); // Ngăn chặn gửi form mặc định
+                const p = JSON.parse(pitchData);
+                var startTime = new Date(this.dataset.startTime).toISOString();
+                var endTime = new Date(this.dataset.endTime).toISOString();
+                var name = document.getElementById('name').value;
+                var email = document.getElementById('email').value;
+                var phone = document.getElementById('tele').value;
+                var codeid = code.id;
+                var isContinue = true;
+                var payment = document.querySelector('input[name="payment"]:checked').value;
+                if (payment == 'paypal')
+                {
+                    bankId = null;
+                }
+                else
+                {
+                    bankId = payment;
+                }
+                var pitchId = p.id;
+                
+                
+
+                if (startTime && endTime && isContinue) {
+                    var orderData = {
+                        startAt: startTime,
+                        endAt: endTime,
+                        name: name,
+                        email: email,
+                        phone: phone,
+                        footballPitchId: pitchId,
+                        accountId: customerId,
+                        bankId: bankId,
+                        total: totalBill,
+                        deposite: deposite,
+                        discountId: codeid
+                    };
+
+                    console.log('Dữ liệu đặt hàng:', orderData);
+
+                    // Gửi thông tin đến server
+                    fetch('https://localhost:7074/api/v1/Orders/order', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(orderData)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 400)
+                        {
+                            console.log(data)
+                            alert(data.title);
+                        }
+                        else
+                        {
+                            showOrderSuccessPopup();
+                        }
+                    })
+                    .catch(error => console.error('Lỗi:', error));
+                } else {
+                    alert('Vui lòng chọn thời gian bắt đầu và kết thúc.');
+                }
+            });
+            function formatDate(date) {
+                var options = { year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false, timeZone: 'Asia/Ho_Chi_Minh' };
+                return new Intl.DateTimeFormat('vi-VN', options).format(date);
+            }
+        });
+
+        function showOrderSuccessPopup() {
+            // Hiển thị pop-up
+            document.getElementById('order-success-popup').style.display = 'block';
+
+            // Lắng nghe sự kiện nhấn nút Đóng
+            document.getElementById('close-popup').addEventListener('click', function() {
+                // Ẩn pop-up
+                document.getElementById('order-success-popup').style.display = 'none';
+                // Chuyển hướng về trang chủ
+                window.location.href = 'index.html';
+            });
+        }
+
+        function checkDiscountCode(inputValue) {
+            clearTimeout(typingTimer); // Xóa bỏ timer cũ nếu người dùng vẫn đang nhập
+
+            typingTimer = setTimeout(() => {
+                if (inputValue === "") {
+                    document.getElementById("message").textContent = "";
+                    code = null; // Reset biến code nếu không nhập gì
+                    return;
+                }
+            fetch(`https://localhost:7074/api/v1/Orders/validateCode?code=${inputValue}`)
+                    .then(response => {
+                        if (response.ok) {
+                            showNotification('Mã giảm giá áp thành công'); 
+                            return response.json();
+                        }
+                        if (!response.ok) {
+                            showNotification('Mã giảm giá không hợp lệ');
+                            document.getElementById('code').value = "";
+                            console.log(response);
+                        }
+                        
+                    })
+                    .then(data => {
+                        code = data
+                        console.log(data);
+                    })
+                    .catch(error => {
+                        document.getElementById('result').innerHTML = `<p style="color:red;">${error.message}</p>`;
+                        code = null;
+                    });
+                }, 5000); 
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order List</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f4f4f4;
+            text-align: left;
+        }
+        #errorMessage, #successMessage {
+            display: none;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Order List</h1>
+    <div id="errorMessage">Failed to load orders.</div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Total</th>
+                <th>Start At</th>
+                <th>End At</th>
+            </tr>
+        </thead>
+        <tbody id="orderTableBody">
+            <!-- Rows will be dynamically inserted here -->
+        </tbody>
+    </table>
+    <div id="pageInfo"></div>
+    <script>
+        // Function to fetch orders and populate the table
+        async function fetchOrders() {
+            try {
+                const response = await fetch('https://localhost:7076/api/v1/Orders');
+                if (response.ok) {
+                    const data = await response.json();
+                    const tableBody = document.getElementById('orderTableBody');
+                    tableBody.innerHTML = '';
+
+                    if (Array.isArray(data) && data.length > 0) {
+                        data.forEach(order => {
+                            const row = document.createElement('tr');
+
+                            row.innerHTML = `
+                                <td>${order.id}</td>
+                                <td>${order.name}</td>
+                                <td>${order.phone}</td>
+                                <td>${order.email}</td>
+                                <td>${order.total}</td>
+                                <td>${new Date(order.startAt).toLocaleString()}</td>
+                                <td>${new Date(order.endAt).toLocaleString()}</td>
+                            `;
+
+                            tableBody.appendChild(row);
+                        });
+                        document.getElementById('pageInfo').innerText = 'Orders loaded successfully.';
+                    } else {
+                        tableBody.innerHTML = '<tr><td colspan="7">No orders found.</td></tr>';
+                        document.getElementById('pageInfo').innerText = 'No orders available.';
+                    }
+                } else if (response.status === 204) {
+                    // Handle NoContent response
+                    document.getElementById('pageInfo').innerText = 'No orders available.';
+                } else {
+                    // Handle errors from the API
+                    const result = await response.json();
+                    document.getElementById('errorMessage').innerText = result.Message || 'Unknown error occurred';
+                    document.getElementById('errorMessage').style.display = 'block';
+                }
+            } catch (error) {
+                document.getElementById('errorMessage').innerText = 'Error fetching orders: ' + error.message;
+                document.getElementById('errorMessage').style.display = 'block';
+            }
+        }
+
+        // Fetch orders when the page loads
+        document.addEventListener('DOMContentLoaded', fetchOrders);
+    </script>
+</body>
+</html>

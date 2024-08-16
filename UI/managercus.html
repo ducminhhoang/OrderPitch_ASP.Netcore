@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sân xịn</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>        
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css' rel='stylesheet' />
+    <style>
+        /* Container cho bảng và phân trang */
+        #orders-container {
+            width: 90%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Cải thiện kiểu bảng */
+        #orders-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        /* Cải thiện kiểu header bảng */
+        #orders-table thead {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+
+        #orders-table th {
+            padding: 12px;
+            text-align: left;
+        }
+
+        /* Cải thiện kiểu hàng bảng */
+        #orders-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        #orders-table td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        /* Cải thiện kiểu hàng bảng khi hover */
+        #orders-table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Cải thiện kiểu phân trang */
+        #pagination {
+            text-align: center;
+        }
+
+        #pagination button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #pagination button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+    </style>
+</head>
+
+<body>
+     <!-- Topbar Start -->
+     <div class="container-fluid">
+        <div class="row bg-secondary py-1 px-xl-5">
+            <div class="col-lg-6 d-none d-lg-block">
+                
+            </div>
+            <div class="col-lg-6 text-center text-lg-right">
+                
+                <div class="d-inline-flex align-items-center d-block d-lg-none">
+                    <a href="" class="btn px-0 ml-2">
+                        <i class="fas fa-heart text-dark"></i>
+                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
+                    </a>
+                    <a href="" class="btn px-0 ml-2">
+                        <i class="fas fa-shopping-cart text-dark"></i>
+                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
+            <div class="col-lg-4">
+                <a href="" class="text-decoration-none">
+                    <span class="h1 text-uppercase text-primary bg-dark px-2">Sân</span>
+                    <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Xịn</span>
+                </a>
+            </div>
+            <div class="col-lg-4 col-6 text-left">
+                <form action="">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for products">
+                        <div class="input-group-append">
+                            <span class="input-group-text bg-transparent text-primary">
+                                <i class="fa fa-search"></i>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Tài khoản của tôi</button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <button class="dropdown-item" type="button" id="view_acc" style="display: none;" onclick="viewAccount()">Xem tài khoản</button>
+                    <button class="dropdown-item" type="button" id="logout" style="display: none;" onclick="logout()">Đăng xuất</button>
+                    <button class="dropdown-item" type="button" id="login" style="display: none;" onclick="login()">Đăng nhập</button>
+                    <button class="dropdown-item" type="button" id="signin" style="display: none;" onclick="signin()">Đăng ký</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-dark mb-30">
+        <div class="row px-xl-5">
+            <div class="col-lg-9">
+                <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
+                    <a href="" class="text-decoration-none d-block d-lg-none">
+                        <span class="h1 text-uppercase text-dark bg-light px-2">Sân</span>
+                        <span class="h1 text-uppercase text-light bg-primary px-2 ml-n1">Xịn</span>
+                    </a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto py-0">
+                            <a href="index.html" class="nav-item nav-link">Trang chủ</a>
+                            <a href="contact.html" class="nav-item nav-link">Liên hệ</a>
+                        </div>
+                        <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
+                            <a href="" class="btn px-0">
+                                <i class="fas fa-heart text-primary"></i>
+                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                            </a>
+                            <a href="" class="btn px-0 ml-3">
+                                <i class="fas fa-shopping-cart text-primary"></i>
+                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+    <!-- Breadcrumb Start -->
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <div class="col-12">
+                <nav class="breadcrumb bg-light mb-30">
+                    <a class="breadcrumb-item text-dark" href="index.html">Trang chủ</a>
+                    <!-- <a class="breadcrumb-item text-dark" href="#"></a> -->
+                    <span class="breadcrumb-item text-darke">Danh sách sân đặt</span>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <div id="orders-container">
+        <table id="orders-table">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Tên người đặt</th>
+                    <th>Điện thoại</th>
+                    <th>Email</th>
+                    <th>Tiền cọc</th>
+                    <th>Tổng tiền</th>
+                    <th>Tên sân</th>
+                    <th>Trạng thái</th>
+                    <th>Loại thanh toán</th>
+                </tr>
+            </thead>
+            <tbody id="orders-list">
+                <!-- Dữ liệu sẽ được thêm vào đây bởi JavaScript -->
+            </tbody>
+        </table>
+        <div id="pagination">
+            <!-- Phân trang sẽ được thêm vào đây bởi JavaScript -->
+        </div>
+    </div>
+    
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+    <script src="js/setup.js"></script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script>
+        let currentPage = 1;
+        const pageSize = 5;
+        const customerId = sessionStorage.getItem('customerId');
+
+        if (!customerId) {
+            window.location.href = '404.html';
+        }
+
+        function fetchOrders(page) {
+            const apiUrl = `https://localhost:7074/api/v1/Orders/customer?customerId=${customerId}&page=${page}&pageSize=${pageSize}`;
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    
+                    displayOrders(data.items);
+                    setupPagination(data.page, data.totalPages);
+                })
+                .catch(error => console.error('Error fetching pitches:', error));
+        }
+
+        function displayOrders(orders) {
+            const ordersList = document.getElementById('orders-list');
+            ordersList.innerHTML = '';
+
+            if (Array.isArray(orders)) {
+                orders.forEach((order, index) => {
+                    ordersList.innerHTML += `
+                        <tr>
+                            <td>${index + 1}</td>
+                            <td>${order.name}</td>
+                            <td>${order.phone}</td>
+                            <td>${order.email}</td>
+                            <td>${order.deposit.toLocaleString('en-US')} VND</td>
+                            <td>${order.total.toLocaleString('en-US')} VND</td>
+                            <td>${order.footballPitchId}</td>
+                            <td>${order.status}</td>
+                            <td>${order.bankId ? order.bankId : 'Trực tiếp'}</td>
+                        </tr>
+                    `;
+                });
+            } else {
+                console.error('orders is not an array:', orders);
+            }
+        }
+
+        function setupPagination(current, total) {
+            const pagination = document.getElementById('pagination');
+            pagination.innerHTML = '';
+
+            for (let i = 1; i <= total; i++) {
+                pagination.innerHTML += `<button onclick="fetchOrders(${i})" ${i === current ? 'disabled' : ''}>${i}</button>`;
+            }
+        }
+
+        fetchOrders(currentPage);
+    </script>
+</body>
+
+</html>

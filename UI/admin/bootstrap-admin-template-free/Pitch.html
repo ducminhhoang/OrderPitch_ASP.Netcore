@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>DASHMIN - Bootstrap Admin Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid position-relative bg-white d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-light navbar-light">
+                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>DASHMIN</h3>
+                </a>
+                <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="position-relative">
+                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0 nameACC">Jhon Doe</h6>
+                        <span>Admin</span>
+                    </div>
+                </div>
+                <div class="navbar-nav w-100">
+                    <a href="Account.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Quản lý tài khoản</a>
+                    <a href="Discount.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Quản lý giảm giá</a>
+                    <a href="Pitch.html" class="nav-item nav-link active"><i class="fa fa-table me-2"></i>Quản lý sân bóng</a>
+                    <a href="Order.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Quản lý đặt sân</a>
+                    
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="signin.html" class="dropdown-item">Sign In</a>
+                            <a href="signup.html" class="dropdown-item">Sign Up</a>
+                            <a href="404.html" class="dropdown-item">404 Error</a>
+                            <a href="blank.html" class="dropdown-item">Blank Page</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
+                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <form class="d-none d-md-flex ms-4">
+                    <input class="form-control border-0" type="search" placeholder="Search">
+                </form>
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-envelope me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Message</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">See all message</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-bell me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Notificatin</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Profile updated</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">New user added</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Password changed</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">See all notifications</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex nameACC"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">My Profile</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <a href="#" class="dropdown-item">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+
+
+            <!-- Table Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-12">
+                        <div class="bg-light rounded h-100 p-4">
+                            <div class="d-flex justify-content-center mb-4">
+                                <h6 class="custom-header">Bảng Sân bóng</h6>
+                            </div>
+                            <button class="btn btn-success mb-3" onclick="openAddPitchModal()">Thêm sân bóng</button>
+                            <!-- <input type="text" id="searchInput" class="form-control mb-3" placeholder="Tìm kiếm theo tên" oninput="searchPitch()"> -->
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Tên sân</th>
+                                        <th scope="col">Thời gian bắt đầu</th>
+                                        <th scope="col">Thời gian kết thúc</th>
+                                        <th scope="col">Mô tả</th>
+                                        <th scope="col">Giá tiền theo giờ</th>
+                                        <th scope="col">mã loại sân</th>
+                                        <th scope="col">Loại sân</th>
+                                        <th scope="col">Created At</th>
+                                        <th scope="col">Updated At</th>
+                                        <th scope="col">Hình ảnh</th>
+                                        <th scope="col">Order</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="pitchTableBody">
+                                    <!-- Dynamic rows will be appended here by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add/Edit Pitch Modal -->
+            <div class="modal fade" id="pitchModal" tabindex="-1" aria-labelledby="pitchModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="pitchModalLabel">Thêm/Sửa Sân bóng</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="pitchForm">
+                                <input type="hidden" id="pitchId">
+                                <div class="mb-3">
+                                    <label for="pitchName" class="form-label">Tên sân</label>
+                                    <input type="text" class="form-control" id="pitchName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="timeStart" class="form-label">Thời gian Bắt Đầu</label>
+                                    <input type="text" class="form-control" id="timeStart" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="timeEnd" class="form-label">Thời gian kết thúc</label>
+                                    <input type="text" class="form-control" id="timeEnd" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="description" class="form-label">Mô tả</label>
+                                    <input type="text" class="form-control" id="description" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="pricePerHour" class="form-label">Giá tiền theo giờ</label>
+                                    <input type="number" class="form-control" id="pricePerHour" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="pitchTypeId" class="form-label">Mã loại sân</label>
+                                    <input type="text" class="form-control" id="pitchTypeId" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="pitchType" class="form-label">Loại sân</label>
+                                    <input type="text" class="form-control" id="pitchType" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="createdAt" class="form-label">Created At</label>
+                                    <input type="text" class="form-control" id="createdAt" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="updateAt" class="form-label">Update At</label>
+                                    <input type="text" class="form-control" id="updateAt" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="images" class="form-label">Hình ảnh</label>
+                                    <input type="text" class="form-control" id="images" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="orders" class="form-label">Orders</label>
+                                    <input type="text" class="form-control" id="orders" required>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                            <button type="button" class="btn btn-primary" onclick="savePitch()">Lưu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add/Edit Pitch Modal End -->
+
+
+            <!-- Footer Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-light rounded-top p-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 text-center text-sm-start">
+                            &copy; 
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="js/setup.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            loadPitch();
+        });
+        //get
+        function loadPitch() {
+            fetch('https://localhost:7074/api/FootballPitch/GetAllPitch')
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.getElementById('pitchTableBody');
+                    tableBody.innerHTML = '';
+
+                    data.forEach(pitch => {
+                        const row = `<tr>
+                            <td>${pitch.id}</td>
+                            <td>${pitch.name}</td>
+                            <td>${pitch.timeStart}</td>
+                            <td>${pitch.timeEnd}</td>
+                            <td>${pitch.pricePerHour}</td>
+                            <td>${pitch.isMaintenance}</td>
+                            <td>${pitch.pitchTypeId}</td>
+                            <td>${pitch.pitchType}</td>
+                            <td>${pitch.createdAt}</td>
+                            <td>${pitch.images}</td>
+                            <td>${pitch.orders}</td>
+                            <td>
+                                <button class="btn btn-warning btn-sm" onclick="openEditpitchModal(${pitch.id})">Sửa</button>
+                                <button class="btn btn-danger btn-sm" onclick="deletePitch(${pitch.id})">Xóa</button>
+                            </td>
+                        </tr>`;
+                        tableBody.insertAdjacentHTML('beforeend', row);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        }
+        //add
+        function openAddPitchModal() {
+            clearForm();
+            document.getElementById('pitchModalLabel').textContent = 'Thêm sân bóng';
+            document.getElementById('pitchId').value = ''; // Ensure this is empty for adding a new pitch
+            const pitchModal = new bootstrap.Modal(document.getElementById('pitchModal'));
+            pitchModal.show();
+        }
+
+        function addPitch() {
+            const pitchData = {
+                name: addPitchForm.name.value,
+                timeStart: addPitchForm.timeStart.value,
+                timeEnd: addPitchForm.timeEnd.value,
+                description: addPitchForm.description.value,
+                pricePerHour: addPitchForm.pricePerHour.value,
+                isMaintenance: addPitchForm.isMaintenance.checked,
+                pitchTypeId: parseInt(addPitchForm.pitchTypeId.value),
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            };
+            console.log(pitchData);
+
+            fetch('https://localhost:7074/api/FootballPitch/CreatePitch', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(pitchData),
+            })
+            .then(response => {
+                if (response.ok) {
+                    loadPitch(); // Refresh the pitch list after adding
+                    const pitchModal = bootstrap.Modal.getInstance(document.getElementById('pitchModal'));
+                    pitchModal.hide(); // Close the modal after adding
+                } else {
+                    console.log(response.json());
+                    
+                    return response.json().then(error => { throw new Error(error); });
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+        //put
+
+        function openEditPitchModal(id) {
+            fetch(`https://localhost:7074/api/FootballPitch/GetPitchById/${id}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('pitchModalLabel').textContent = 'Sửa sân bóng';
+                    document.getElementById('pitchId').value = data.id;
+                    document.getElementById('pitchName').value = data.name;
+                    document.getElementById('timeStart').value = data.timeStart;
+                    document.getElementById('timeEnd').value = data.timeEnd;
+                    document.getElementById('description').value = data.description;
+                    document.getElementById('pricePerHour').value = data.pricePerHour;
+                    document.getElementById('pitchTypeId').value = data.pitchTypeId;
+                    document.getElementById('pitchType').value = data.pitchType;
+                    document.getElementById('createdAt').value = data.createdAt;
+                    document.getElementById('updatedAt').value = data.updatedAt;
+                    document.getElementById('images').value = data.images;
+                    document.getElementById('orders').value = data.orders;
+
+                    const pitchModal = new bootstrap.Modal(document.getElementById('pitchModal'));
+                    pitchModal.show();
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        function clearForm() {
+            document.getElementById('pitchForm').reset();
+        }
+        
+        
+
+        function editPitch() {
+            
+            const pitchData = {
+                // name: document.getElementById('pitchName').value,
+                // email: document.getElementById('accountEmail').value,
+                // phone: document.getElementById('accountPhone').value,
+                // password: document.getElementById('accountPassword').value,
+                // address: document.getElementById('accountAddress').value,
+                // accountTypeId: document.getElementById('accountTypeId').value,
+                name: addPitchForm.name.value,
+                timeStart: addPitchForm.timeStart.value,
+                timeEnd: addPitchForm.timeEnd.value,
+                description: addPitchForm.description.value,
+                pricePerHour: addPitchForm.pricePerHour.value,
+                isMaintenance: addPitchForm.isMaintenance.checked,
+                pitchTypeId: parseInt(addPitchForm.pitchTypeId.value),
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+            };
+
+            fetch(`https://localhost:7074/api/FootballPitch/UpdatePitch`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(pitchData),
+            })
+            .then(response => {
+                if (response.ok) {
+                    loadPitch(); // Refresh the pitch list after editing
+                    const pitchModal = bootstrap.Modal.getInstance(document.getElementById('pitchModal'));
+                    pitchModal.hide(); // Close the modal after editing
+                } else {
+                    return response.json().then(error => { throw new Error(error); });
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+        document.getElementById('pitchModal').addEventListener('show.bs.modal', function (event) {
+            const pitchId = document.getElementById('pitchId').value;
+            const saveButton = document.querySelector('#pitchModal .btn-primary');
+            if (pitchId) {
+                saveButton.setAttribute('onclick', 'editPitch()');
+            } else {
+                saveButton.setAttribute('onclick', 'addPitch()');
+            }
+        });
+        function clearForm() {
+            document.getElementById('pitchForm').reset();
+            document.getElementById('pitchId').value = ''; // Reset the hidden ID field as well
+        }
+
+
+        function deletePitch(id) {
+            if (confirm('Bạn có chắc chắn muốn xóa sân bóng này không?')) {
+                fetch(`https://localhost:7074/api/FootballPitch/DeleteById/${id}`, {
+                    method: 'DELETE'
+                })
+                .then(response => {
+                    if (response.ok) {
+                        loadPitch();
+                    } else {
+                        return response.json().then(error => { throw new Error(error); });
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+            }
+        }
+
+        // function searchPitch() {
+        //     const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+        //     const url = `https://localhost:7074/api/FootballPitch/SearchByName/${encodeURIComponent(searchTerm)}`;
+
+        //     if (searchTerm) {
+        //         fetch(url)
+        //             .then(response => response.json())
+        //             .then(data => {
+        //                 const tableBody = document.getElementById('accountTableBody');
+        //                 tableBody.innerHTML = '';
+
+        //                 data.forEach(pitch => {
+        //                     const row = `<tr>
+        //                          <td>${pitch.id}</td>
+        //                         <td>${pitch.name}</td>
+        //                         <td>${pitch.timeStart}</td>
+        //                         <td>${pitch.timeEnd}</td>
+        //                         <td>${pitch.pricePerHour}</td>
+        //                         <td>${pitch.isMaintenance}</td>
+        //                         <td>${pitch.pitchTypeId}</td>
+        //                         <td>${pitch.pitchType}</td>
+        //                         <td>${pitch.createdAt}</td>
+        //                         <td>${pitch.images}</td>
+        //                         <td>${pitch.orders}</td>
+        //                         <td>
+        //                             <button class="btn btn-warning btn-sm" onclick="openEditPitchModal(${pitch.id})">Sửa</button>
+        //                             <button class="btn btn-danger btn-sm" onclick="deletePitch(${pitch.id})">Xóa</button>
+        //                         </td>
+        //                     </tr>`;
+        //                     tableBody.insertAdjacentHTML('beforeend', row);
+        //                 });
+        //             })
+        //             .catch(error => console.error('Error:', error));
+        //     } else {
+        //         loadAccounts(); // Load all accounts if the search input is empty
+        //     }
+        // }
+
+
+        // Fetch accounts on page load
+        // window.onload = fetchAccounts;
+    </script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
