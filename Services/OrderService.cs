@@ -30,6 +30,11 @@ namespace TestApiPitchOrder.Services
         {
             return await _orderRepository.GetOrdersByCustomerId(customerId, page, pageSize);
         }
+        public async Task<Order> Insert(Order entity)
+        {
+            ValidateCustom(entity, true);
+            return await _orderRepository.Insert(entity);
+        }
         public async Task<Discount> CheckDiscountCode(string code)
         {
             return await _orderRepository.CheckDisountCode(code);
